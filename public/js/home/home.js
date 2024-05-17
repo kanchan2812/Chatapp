@@ -46,3 +46,32 @@ async function on_Signup(e) {
         }
     }
 }
+SigninElements.signin_btn.addEventListener('click', onSignin);
+async function onSignin(e) {
+    try {
+        if (signin_form.checkValidity()) {
+            e.preventDefault();
+            const data = {
+                email: SigninElements.email.value,
+                password: SigninElements.password.value
+            }
+            const signinResponse = await axios.post("user/signin", data);
+            signin_form.reset();
+            helperFunctions.alertFunction(SigninElements.alert3);
+            setTimeout(() => {
+                window.location.href = "/user";
+            }, 3000)
+        }
+
+    } catch (error) {
+        if (error.response && error.response.status === 401) {
+            helperFunctions.alertFunction(SigninElements.alert2)
+        } else if (error.response && error.response.status === 409) {
+            helperFunctions.alertFunction(SigninElements.alert1)
+        } else {
+            alert("Something went wrong - Sign in again");
+            console.log(error);
+        }
+
+    }
+}

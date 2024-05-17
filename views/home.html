@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    gnup modal-->
+  <div class="modal fade" id="signup_modal">
+    <div class="modal-dialog modal-dialog-centered"> 
+      <div class="modal-content background-image-container ">
+        <div class="modal-header border-0   text-black">
+          <h2>Sign up here</h2>
+          <button class="btn btn-close" data-bs-dismiss="modal" data-bs-target="#signup_modal"></button>
+        </div>
+        <div class="modal-body text-black">
+            <form autocomplete="on" id="signup_form">
+                <div class="form-group mt-3">
+                  <label for="Name"><i class="fas fa-user-astronaut "></i>Name</label>
+                  <input type="text" class="form-control" name="Name" placeholder="Name" required>
+                </div>
+                <div class="form-group mt-3">
+                  <label for="userName"><i class="fas fa-user"></i> Email</label>
+                  <input type="text" class="form-control" name="Email" placeholder="Email" required>
+                </div>
+                <div class="form-group mt-3">
+                  <label for="phoneNumber"><i class="fas fa-phone"></i> Phone Number</label>
+                  <input type="tel" class="form-control" name="PhoneNumber" placeholder="Phone Number" pattern="^\d{10}$"
+                    title="Phone number must be exactly 10 digits" required>
+                </div>
+    
+                <div class="form-group mt-3">
+                  <label for="password"><i class="fas fa-lock"></i> Enter a Password</label>
+                  <input type="password" class="form-control" name="Password1" placeholder="Password" pattern=".{5,}"
+                    title="Password should contain a minimum of 5 characters" required>
+                </div>
+                <div class="form-group mt-3">
+                  <label for="password"><i class="fas fa-lock"></i> Re-enter your password</label>
+                  <input type="password" class="form-control" name="Password2" placeholder="Password" required>
+                </div>
+                <div class="form-group text-center mt-4 ">
+                  <input type="submit" class="btn btn-primary submit" value="Sign Up">
+                </div>
+                <div class="form-group text-center mt-2">
+                  Already member? <a href="#" data-bs-dismiss="modal" data-bs-toggle="modal"
+                    data-bs-target="#signin_modal">Signin here</a>
+                </div>
+    
+                <div class="alert bg-warning alert-dismissible fade show mt-3 d-none" role="alert" id="alert1">
+                  <strong>Hi user!</strong> Account is already exist go to sign in page.
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <div class="alert bg-danger bg-opacity-75 alert-dismissible fade show mt-3 d-none" role="alert" id="alert2">
+                  <strong>Hi user!</strong> both password should be same.
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <div class="alert bg-success alert-dismissible fade show mt-3 d-none" role="alert" id="alert3">
+                  <strong>Hi user!</strong> Sign up successfull redirecting to profile.
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+              </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
